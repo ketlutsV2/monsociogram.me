@@ -6,4 +6,4 @@ app.hebergeur={
 };
 
 app.url="https://monsociogram.me/";
-app.serveur="../api/teacher/";
+app.serveur="../api/";
