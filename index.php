@@ -1,43 +1,41 @@
 <?php
 
 $pdo = new PDO('sqlite:data/stats.db');
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $lastMonthTime=time()-2592000;
 
+$stmt = $pdo->prepare("SELECT * FROM users 	WHERE user_connexionLastDate>=$lastMonthTime");
+$stmt->execute();
 
-$stmt = $pdo->prepare("SELECT * FROM users 
-        WHERE user_connexionLastDate>=$lastMonthTime");
-    $stmt->execute();
-
-   $nbUserActif=count($stmt->fetchAll());   
+$nbUserActif=count($stmt->fetchAll());   
 
 
 function getNbEtablissements(){
-    $dossier_url="data/schools";
-    $etablissements=array();
-    if($dossier = opendir($dossier_url)){
-        while(false !== ($alpha = readdir($dossier)))
-        {
-            if(is_dir($dossier_url.'/'.$alpha) AND $alpha!="." AND $alpha!=".."){
-                if($sous_dossier = opendir($dossier_url.'/'.$alpha)){
-                    $k=0;
-                    while(false !== ($fichier = readdir($sous_dossier)))
-                    {
-                        if(is_dir($dossier_url.'/'.$alpha.'/'.$fichier) AND $fichier!="." AND $fichier!=".." AND $fichier!="files"){
+	$dossier_url="data/schools";
+	$etablissements=array();
+	if($dossier = opendir($dossier_url)){
+		while(false !== ($alpha = readdir($dossier)))
+		{
+			if(is_dir($dossier_url.'/'.$alpha) AND $alpha!="." AND $alpha!=".."){
+				if($sous_dossier = opendir($dossier_url.'/'.$alpha)){
+					$k=0;
+					while(false !== ($fichier = readdir($sous_dossier)))
+					{
+						if(is_dir($dossier_url.'/'.$alpha.'/'.$fichier) AND $fichier!="." AND $fichier!=".." AND $fichier!="files"){
 
-                            array_push($etablissements, $fichier);
-                            $k++;
-                        }
-                    }
-                    if($k==0){
-                        array_push($etablissements, $alpha);
-                    }
-                }
-            }
-        }
-    }
-    return count($etablissements);
+							array_push($etablissements, $fichier);
+							$k++;
+						}
+					}
+					if($k==0){
+						array_push($etablissements, $alpha);
+					}
+				}
+			}
+		}
+	}
+	return count($etablissements);
 }
 
 $nbEtablissements=getNbEtablissements();
@@ -78,18 +76,18 @@ $nbEtablissements=getNbEtablissements();
 		<div class="box flex-rows main">
 			<div class="">
 				<div class="h1">
-				<img src='app/assets/img/logo.svg' width="50" />
-				<span>
-					MonSociogram<span class="small">.me</span>
-				</span>
+					<img src='app/assets/img/logo.svg' width="50" />
+					<span>
+						MonSociogram<span class="small">.me</span>
+					</span>
 				</div>
 			</div>
 
 
-	<div class="text-end flex-1">
-<a href="app" class="btn btn-primary"><span class="bi bi-chevron-right"></span> Accèder à l'application</a>
+			<div class="text-end flex-1">
+				<a href="app" class="btn btn-primary"><span class="bi bi-chevron-right"></span> Accèder à l'application</a>
 
-	</div>
+			</div>
 
 
 		</div>
@@ -98,86 +96,86 @@ $nbEtablissements=getNbEtablissements();
 
 
 
-<div class="flex-columns flex-1 box">
+		<div class="flex-columns flex-1 box">
 
-<div class="fs-4 mb-2 mt-4">
-  	<strong>Analysez vos groupes grâce au sociogramme !</strong>
-  </div>
-
-  
-
-<div class="flex-rows main mb-4">
-
-
-	 <div class="flex-3 flex-columns main-reverse">
-
-  <p class="card-text">
-      <ul>
-        <li>Visualiser facilement les relations sociales ou professionnes entre individus</li>
-        <li>Détecter les leaders (positifs ou négatifs) ou les personnes isolées, rejetées</li>
-        <li>Générer des groupes d'affinités (sociogroupes)</li>
-        <li>Générer des groupes aléatoires</li>
-      </ul>
-    </p>
-
-<div class="text-center">
-	
-	    	<a href="app"><img src="assets/ecrans.png" width="90%" /></a>
-</div>
-
-    </div>
-
-<hr class="small-screen"/>
-
-    <div class="flex-1 text-center fs-6">
-    	
-	Cette application est payante, mais <strong>le prix est libre</strong> ! 
-
-    	<br/>
-    		<br/>
-    	<strong>Soutenez le projet !</strong>
-    		<br/>
- 	<br/>
-		<a href="https://spinell.app/paiements" rel="noreferrer" target="_blank" class="btn btn-primary"><span class="bi bi-heart-fill"></span> Accèder au paiement !</a>
-			<br/>
-				<br/>
-			ou
-				<br/>
-<br/>
-
-<img src="assets/paypal_QRCode.png" width="120" /><br/>
-Scannez moi !
-
-	<br/>
-		<br/>
-	ou
-<br/>
-	<br/>
-
-<a href="https://www.buymeacoffee.com/loyowuvuxi" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="width: 150px !important;" ></a> 
-
-    </div>
-</div>
- 
-<div class="h4 flex-rows" style="color: white;">
-	<div class="flex-1">
-		<?php echo $nbEtablissements; ?> établissements
-		
-	</div>
-
-	<div class="flex-1">
-			<?php echo $nbUserActif; ?> utilisateurs actifs
-	</div>
-</div>
-
- 
-
-
-  </div>
-  
-	<div id="footer" class="box">
-				<img src='app/assets/img/logo.svg' width='20px'/> <a href="https://MonSociogram.me/" target="_blank" rel="noreferrer">MonSociogram.me</a> | <a href="app">Mentions légales</a>
+			<div class="fs-4 mb-2 mt-4">
+				<strong>Analysez vos groupes grâce au sociogramme !</strong>
 			</div>
+
+
+
+			<div class="flex-rows main mb-4">
+
+
+				<div class="flex-3 flex-columns main-reverse">
+
+					<p class="card-text">
+						<ul>
+							<li>Visualiser facilement les relations sociales ou professionnes entre individus</li>
+							<li>Détecter les leaders (positifs ou négatifs) ou les personnes isolées, rejetées</li>
+							<li>Générer des groupes d'affinités (sociogroupes)</li>
+							<li>Générer des groupes aléatoires</li>
+						</ul>
+					</p>
+
+					<div class="text-center">
+
+						<a href="app"><img src="assets/ecrans.png" width="90%" /></a>
+					</div>
+
+				</div>
+
+				<hr class="small-screen"/>
+
+				<div class="flex-1 text-center fs-6">
+
+					Cette application est payante, mais <strong>le prix est libre</strong> ! 
+
+					<br/>
+					<br/>
+					<strong>Soutenez le projet !</strong>
+					<br/>
+					<br/>
+					<a href="https://spinell.app/paiements" rel="noreferrer" target="_blank" class="btn btn-primary"><span class="bi bi-heart-fill"></span> Accèder au paiement !</a>
+					<br/>
+					<br/>
+					ou
+					<br/>
+					<br/>
+
+					<img src="assets/paypal_QRCode.png" width="120" /><br/>
+					Scannez moi !
+
+					<br/>
+					<br/>
+					ou
+					<br/>
+					<br/>
+
+					<a href="https://www.buymeacoffee.com/loyowuvuxi" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="width: 150px !important;" ></a> 
+
+				</div>
+			</div>
+
+			<div class="h4 flex-rows" style="color: white;">
+				<div class="flex-1">
+					<?php echo $nbEtablissements; ?> établissements
+
+				</div>
+
+				<div class="flex-1">
+					<?php echo $nbUserActif; ?> utilisateurs actifs
+				</div>
+			</div>
+
+
+
+
+		</div>
+
+		<div id="footer" class="box">
+			<img src='app/assets/img/logo.svg' width='20px'/> <a href="https://MonSociogram.me/" target="_blank" rel="noreferrer">MonSociogram.me</a> | <a href="app">Mentions légales</a>
+		</div>
 
 	</div>
 	<script src="app/assets/lib/jquery-3.5.1.min.js"></script>  

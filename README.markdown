@@ -31,3 +31,7 @@
 > Le fichier **app/config.js** doit être configuré vers l'API.
 
 > Le fichier **api/config.php** doit être configuré pour que **\_DATA_** pointe ver le dossier **data**.
+
+
+## Dev
+> Lancer **gulp watch** dans le dossier **app/gulp**.
