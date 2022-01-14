@@ -1,0 +1,36 @@
+/*
+Copyright 2021 Pierre GIRARDOT
+
+This file is part of Sociogram.
+
+Sociogram is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version GPL-3.0-or-later of the License.
+
+Sociogram is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Sociogram  If not, see <https://www.gnu.org/licenses/>.*/
+
+
+@use 'scss/vars.scss';
+
+//Bootstrap Custom
+@use '../lib/bootstrap-5.0.0/scss/bootstrap.scss' with (
+  $primary: vars.$primary
+);
+
+@use 'scss/_app.scss';
+@use 'scss/_classroom.scss';
+@use 'scss/_config.scss';
+@use 'scss/_connexion.scss';
+@use 'scss/_tutoriel.scss';
+@use 'scss/_header.scss';
+@use 'scss/_home.scss';
+@use 'scss/_mobile.scss';
+@use 'scss/_sociogrammes.scss';
+@use 'scss/_spine.scss';
+@use 'scss/_student.scss';

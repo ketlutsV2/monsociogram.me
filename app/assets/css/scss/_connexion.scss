@@ -1,0 +1,28 @@
+.template_connexion.h1{
+ margin-bottom: 0px !important;
+}
+
+#connexion-header{
+position: relative;
+}
+.connexion-toolbar{
+ position: absolute;
+ right: 10px;
+ top: 10px;
+}
+.connexion-toolbar.btn{
+  display: inline-block;
+}
+#connexion-user-form{
+	margin:  20px;
+}
+
+#connexion-menu{
+	margin:  20px;
+}
+#connexion-plugins-bloc{
+	margin-bottom: 20px;
+}
+#etablissement_form{
+	margin-bottom: 10px;
+}

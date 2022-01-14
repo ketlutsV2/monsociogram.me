@@ -1,0 +1,232 @@
+@use 'vars.scss';
+@use "sass:color";
+
+#spine-wrapper{
+ animation: opacity 1s; 
+ margin-right: auto;
+ margin-left: auto;
+ position: relative;
+ cursor: pointer;
+ margin-top: 35px;
+ margin-bottom: 5px;
+ width:100%;
+}
+
+
+.petale-opacity{
+  animation: opacity 1s; 
+}
+
+.spine{
+  max-height: 100%;
+}
+.petale:hover{
+  opacity: 0.9;
+}
+#petale_1{
+  transform: rotate(-30deg); 
+  transform-origin: 50% 50%;
+  animation-delay: 100ms;
+  fill:vars.$primary;
+  /* animation: tourne_petale_6 1s; */
+}
+#petale_2{
+ transform: rotate(30deg); 
+ transform-origin: 50% 50.5%; 
+ animation-delay: 150ms;
+
+ fill:color.scale(vars.$primary,$lightness: +25%);
+ /* animation: tourne_petale_6 1s; */
+}
+#petale_3{
+ transform: rotate(90deg); 
+ transform-origin: 50% 50%;
+ animation-delay: 200ms;
+ fill:color.scale(vars.$primary,$lightness: -25%);
+ /* animation: tourne_petale_6 1s; */
+}
+#petale_4{
+ transform: rotate(150deg); 
+ transform-origin: 50% 50%;
+ animation-delay: 250ms;
+ fill:vars.$primary;
+ /* animation: tourne_petale_6 1s; */
+}
+#petale_5{
+  transform: rotate(210deg);
+  transform-origin: 50% 50%;
+  animation-delay: 300ms;
+
+  fill:color.scale(vars.$primary,$lightness: +25%);
+  /* animation: tourne_petale_6 1s; */
+}
+#petale_0{
+ transform: rotate(270deg);
+ transform-origin: 50% 50%;
+ animation-delay: 50ms;
+
+ fill:color.scale(vars.$primary,$lightness: -25%);
+}
+
+@keyframes opacity {
+ 0% {   
+  opacity: 0.8;
+}
+100% {
+ opacity: 1;
+}
+}
+
+#spine_icon_0{
+  position: absolute;
+  top: 16%;
+  left: 55%;
+  display: inline-block;
+}
+
+#spine_icon_1{
+  position: absolute;
+  top: 39%;
+  left: 75%;
+  display: inline-block;
+}
+
+#spine_icon_2{
+  position: absolute;
+  top: 66%;
+  left: 66%;
+  display: inline-block;
+}
+
+#spine_icon_3{
+  position: absolute;
+  top: 72%;
+  left: 34%;
+  display: inline-block;
+}
+
+#spine_icon_4{
+  position: absolute;
+  top: 50%;
+  left: 16%;
+  display: inline-block;
+}
+
+#spine_icon_5{
+  position: absolute;
+  top: 21%;
+  left: 25%;
+  display: inline-block;
+}
+
+
+.spine_text{
+  position: absolute;
+  display: inline-block;
+  width: 45%;
+  overflow: hidden;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+#spine_text_0{
+  top: 9%;
+  left: 51%;
+  transform: rotate(30deg);
+}
+#spine_text_1{
+  top: 47%;
+  left: 73%;
+  transform: rotate(90deg);
+}
+#spine_text_2{
+  top: 87%;
+  left: 50%;
+  transform: rotate(-30deg);
+}
+#spine_text_3{
+  top: 87%;
+  left: 6%;
+  transform: rotate(30deg);
+}
+#spine_text_4{
+  top: 47%;
+  left: -17%;
+  transform: rotate(-90deg);
+}
+#spine_text_5{
+  top: 9%;
+  left: 4%;
+  transform: rotate(-30deg);
+}
+
+#spine_polygon{
+  position: absolute;
+  top:calc(42% );
+  left:calc(41% );
+
+}
+#spine_pages{
+  position: absolute;
+  top:calc(42% );
+  left:calc(41% );
+
+}
+
+[class^="spine_icon flaticon-"]::before, [class*="spine_icon flaticon-"]::after{
+  font-size: 35px !important;
+  color: white;
+}
+.spine_icon span{
+  font-size: 35px !important;
+  color: white;
+}
+
+.petale-disabled{
+  filter: grayscale(100%)
+}
+
+
+#spine_badge_0{
+  top: 7%;
+  left: 49%;
+}
+
+#spine_badge_1{
+  top: 30%;
+  left: 85%;
+}
+
+#spine_badge_2{
+  top: 70.5%;
+  left: 81%;
+}
+
+#spine_badge_3{
+  top: 88%;
+  left: 44.5%;
+}
+
+#spine_badge_4{
+  top: 65%;
+  left: 10%;
+}
+
+#spine_badge_5{
+  top: 24%;
+  left: 14%;
+}
+
+
+
+.spine_badge{
+  position: absolute;
+  color: #000;
+  background: white;
+  border-radius: 4px;
+  padding: 2px;
+  border: 1px solid black;
+  font-size: 0.8em;
+  font-weight: bold;
+}

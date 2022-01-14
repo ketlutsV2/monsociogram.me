@@ -1,0 +1,63 @@
+.template_config h2, .template_config h3 {
+    text-align: left;
+    margin-top: 0px;
+}
+
+.config_user input{
+    max-width: 300px;
+}
+.config_user select{
+    max-width: 300px;
+}
+
+.config_user .flex-1{
+    position: relative;
+}
+#config_pseudo{
+  border-bottom: 3px solid;
+  padding-top: 8px;
+}
+#config_avatar_block{
+    align-items:center;
+    justify-content: center;
+}
+#config_user_view_pseudo{
+   border-left: 3px solid;
+   padding-left: 8px;
+}
+
+
+#config_user_view{
+    text-align: left;
+}
+#config_user_view{
+    position: relative;
+}
+
+
+#btn_save_config{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.config-titre{
+    text-align: center;
+    margin-bottom: 20px !important;
+}
+
+#config-plugins-descriptions .switch {
+  position: absolute;
+  right: 4px;
+  top: 4px; 
+}
+
+.plugin-desciption{
+    position: relative;
+}
+
+
+.config-toolbar{
+position: absolute;
+top: 4px;
+left: 4px;
+}

@@ -1,0 +1,265 @@
+@media (max-width: 900px) { 
+  .small-screen{
+    display: block;
+  }
+  .large-screen {
+    display: none !important;
+  }
+
+  body{
+    /*  background-color: red;*/
+  }
+
+  .main.flex-rows{
+    flex-direction: column;
+    width: 100% !important;
+  }
+  .main-reverse.flex-rows{
+    flex-direction: column-reverse;
+
+  }
+  .main-reverse.flex-columns{
+    flex-direction: column-reverse;
+
+  }
+  .title{
+   margin-left: 8px;
+   font-size: 1.2rem;
+   overflow: auto;
+   white-space: nowrap;
+ }
+ .title-bloc{
+  align-items: center;
+}
+.header-logo{
+  width: 35px;
+}
+
+.h1 img {width: 45px;}
+
+
+td>.btn-group>.btn{
+  float: none;
+}
+
+.toolbar>.organizer-nav {
+  float: left !important;
+  margin-left: 4px;
+ /*  display: flex;
+ flex-direction: row;*/
+}
+
+.flex-1{
+  border: 0px;
+ // padding-left:0px !important;
+  // padding-right: 0px !important; 
+}
+.flex-1.text-end{
+   padding-right: 0px;
+}
+.flex-2{
+ padding-left:0px !important;
+ padding-right: 0px !important; 
+}
+.flex-4{
+  overflow: visible;
+}
+.flex-5{
+  padding-left:0px !important;
+  padding-right: 0px !important; 
+}
+
+.aside.flex-3{
+  flex: none;
+  border: 0px;
+  margin-top: 10px;
+}
+.aside.flex-2{
+  flex: none;
+  border: 0px;
+  margin-top: 10px;
+}
+
+
+.btn-lg{
+  font-size:1.4rem !important;
+}
+
+.aside{
+  top:0px;
+  left: 0px;
+  background-color: #ffffff;
+  width: 100%;
+  padding-top: 0px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+   padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+
+.aside>.h3{
+  margin-top: 10px;
+}
+
+
+#header{
+  /*position: relative !important;*/
+  border-bottom: 0px !important;
+  box-shadow: 0px 8px 8px -10px #000000, 1px 0px 5px 3px rgba(0,0,0,0);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#home-pseudo-btn-mobile{
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 2;
+}
+
+
+
+
+
+.box{
+  padding: 10px 5px 5px 5px;
+  margin-top: 0px;
+  margin-bottom:0px !important;
+  border-radius: 0px;
+}
+
+.highcharts-title{
+  display: none;
+}
+
+
+/*CONNEXION*/
+#connexion-user-form{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+/*HOME*/
+#home-aside{
+  margin-bottom:10px; 
+}
+.home-classroom-separation{
+  display: none;
+}
+#home-classrooms{
+  text-align: left;
+}
+.home-classroom-btn{
+  margin-bottom: 5px;
+  max-height:50px !important; 
+  min-width: 75px !important;
+}
+#home-memo, #eleve_memo{
+height:100px;
+}
+
+#home_sourcesSelector>ul{
+  margin-left: -25px !important;
+}
+
+
+
+/*CLASSE*/
+.template_classe>.main-reverse{
+  margin-top:0px; 
+}
+
+#classroom-main{
+  padding-top: 30px;
+}
+
+.classroom-student{
+   width: 48%;
+display: inline-flex;
+margin-right: 1%;
+margin-left: 1%;
+  text-align: center;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+
+#classroom-import-toolbar{
+    position: sticky;
+top: 44px;
+padding-top: 10px;
+background-color: white;
+z-index: 3;
+padding-bottom: 5px;
+border-bottom: 1px solid #e9e9e9;
+margin-bottom: 5px;
+width: 100%;
+display: block;
+}
+
+
+
+/*SOCIOGRAMMES*/
+
+#classroom-sociogramme{
+  overflow: hidden;
+}
+#classroom-sociogramme-synthese{
+overflow: scroll;
+}
+
+#sociogramme-smalltoolbar{
+position: fixed;
+z-index: 5;
+bottom: 0px;
+width: 98%;
+background-color: #ffffff;
+padding: 5px;
+box-shadow: 0px -5px 8px -7px #000, 1px 0px 5px 3px rgba(0,0,0,0);
+left: 1%;
+}
+
+
+#student-botton-toolbar{
+  position: fixed;
+z-index: 5;
+bottom: 0px;
+width: 98%;
+background-color: #fff;
+padding: 5px;
+box-shadow: 0 -5px 8px -7px #000,1px 0 5px 3px rgba(0,0,0,0);
+left: 1%;
+height: 52px;
+align-items: center;
+justify-content: center;
+}
+
+#classroom-mobile-toolbar, #user-mobile-toolbar{
+  position: fixed;
+z-index: 5;
+bottom: 0px;
+width: 98%;
+background-color: #fff;
+padding: 5px;
+box-shadow: 0 -5px 8px -7px #000,1px 0 5px 3px rgba(0,0,0,0);
+left: 1%;
+height: 52px;
+align-items: center;
+justify-content: center;
+}
+
+/*.footer-mobile-toolbar{
+  text-align: center !important;
+}*/
+
+#organizer-add-btn{
+  position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 3;
+}
+
+}
+
+

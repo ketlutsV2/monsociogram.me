@@ -1,0 +1,12 @@
+  .student-picture,#student-edit-picture img{
+  max-height: 100px;
+  max-width: 100px;
+  overflow: hidden;
+}
+
+#student-edit-picture{
+  margin-bottom: 10px;
+}
+ .student-events-row:hover{
+  cursor: pointer;
+ }

@@ -1,0 +1,119 @@
+#classroom-sociogramme{
+  overflow-y: hidden;
+}
+.sociogramme-option{
+  position: relative;
+  height: 30px;
+  white-space: nowrap;
+}
+.sociogramme-option .switch {
+  position: absolute;
+  right: 4px;
+}
+
+.sociogramme_question_color{
+	width: 50px;
+}
+
+#sociogramme_form{
+  position: relative;
+}
+
+.sociogrammeColorSelect{
+  display: inline-block;
+  width:30px;
+  height:30px;
+  border-radius:15px;
+  margin-right: 5px;
+  border:2px solid;  
+
+}
+.sociogrammeColorSelect:hover{
+  cursor: pointer;
+}
+.sociogrammeColorSelect.sociogrammeColorIsFiltered{
+ background-color: white !important;  
+}
+
+#sociogrammeFilters{
+  padding: 5px;
+}
+
+#sociogramme-smalltoolbar.btn-group{
+  margin-left: 5px;
+}
+
+#sociogrammes-create-button{
+  margin-bottom: 4px;
+}
+
+#sociogramme-student-form-block{
+  padding-right: 10px;
+  border-right: 1px solid #E3E3E3;
+}
+
+.sociogramme-box{
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  width: 150px;
+  border-radius: 5px;
+  border:1px solid #E3E3E3;
+/* box-shadow: 0 0 3px;*/
+  padding: 5px;
+  cursor: pointer;
+  position: relative;  
+  min-height: 150px;
+overflow: hidden;
+}
+
+.sociogramme-box-title{
+  font-weight: bold;
+  text-align: center;
+  border-bottom:1px solid; 
+}
+.sociogramme-box-classe{
+/*  font-weight: bold;*/
+  margin: 0px;
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(255,255,255,0.9);
+  width: 100%;
+}
+.sociogramme-box img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+#classroom-sociogramme-synthese-box .h2{
+  text-align: center;
+}
+.student-relations-select-title{
+  border-left-width: 4px ;
+  border-left-style: solid;
+  padding-left: 4px;
+  position: relative;
+}
+
+.sociogramme-question-points{
+ border-radius: 15px;
+ border: 1px solid black;
+ padding: 2px;
+ width: 30px;
+ height: 30x;
+ margin-right: 5px;
+ text-align: center;
+ display: inline-block;
+ font-size: 0.8em;
+}
+
+#sociogramme-toolbar{
+
+    border-bottom: 1px dashed #E3E3E3;
+      padding-bottom:10px;
+    margin-bottom: 10px;
+}

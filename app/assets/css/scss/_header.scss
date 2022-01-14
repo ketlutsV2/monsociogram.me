@@ -1,0 +1,46 @@
+@use 'vars.scss';
+
+#header {
+    z-index: 9;
+    top: 0;
+    flex-shrink: 0; /* 2 */
+    width: 100%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 5px;
+    /*padding-bottom: 5px;*/
+    
+    display: none;
+    position: sticky;
+}
+#header .btn {
+    z-index: 3 !important;
+}
+
+#header.ppView{
+border-bottom: 0px;
+  
+}
+
+#header > .well {
+    margin-bottom: 0;
+}
+#titre {
+   
+font-size: 20px;
+font-weight: bold;
+
+
+}
+.header-logo{
+cursor: pointer;
+}
+#header-toolbar-right{
+text-align: right;
+}
+
+#header-page-select{
+    display: inline-block !important;
+    width: 80%;
+}

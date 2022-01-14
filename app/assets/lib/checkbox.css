@@ -1,0 +1,140 @@
+/*---------------
+-----------------
+------CHECKBOX------
+-----------------
+---------------*/
+
+/* Checkmark style starts */
+
+@-moz-keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 10px;
+    }
+}
+
+@-webkit-keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 10px;
+    }
+}
+
+@keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 10px;
+    }
+}
+
+@keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+
+    50% {
+        height: 0;
+    }
+
+    100% {
+        height: 24px;
+    }
+}
+
+@-webkit-keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+
+    50% {
+        height: 0;
+    }
+
+    100% {
+        height: 24px;
+    }
+}
+
+@-moz-keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+
+    50% {
+        height: 0;
+    }
+
+    100% {
+        height: 24px;
+    }
+}
+
+input[class=check-box] {
+    display: none;
+}
+
+.check-box {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border: 2px solid grey;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: border-color ease 0.2s;
+    cursor: pointer;
+}
+
+.check-box::before,
+.check-box::after {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 4px;
+    height: 0;
+    border-radius: 1px;
+    background-color: #34b93d;
+    transition: opacity ease .5;
+    transform-origin: left top;
+}
+
+.check-box::before {
+    top: 14px;
+    left: 8px;
+    box-shadow: 0 0 0 0 #ffffff;
+    transform: rotate(-135deg);
+}
+
+.check-box::after {
+    top: 7px;
+    left: 1px;
+    transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked + .check-box,
+.check-box.checked {
+    border-color: #34b93d;
+}
+
+input[type=checkbox]:checked + .check-box::after,
+.check-box.checked::after {
+    height: 10px;
+    animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+
+input[type=checkbox]:checked + .check-box::before,
+.check-box.checked::before {
+    height: 24px;
+    animation: dothatopcheck 0.4s ease 0s forwards;
+}
